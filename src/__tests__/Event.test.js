@@ -18,10 +18,6 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.event')).toHaveLength(1);
   });
 
-  test('render collapsed event', () => {
-    expect(EventWrapper.find('.collapsed-event')).toHaveLength(1);
-  });
-
   test('render heading in event', () => {
     expect(EventWrapper.find('.event-heading')).toHaveLength(1);
   });
