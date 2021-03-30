@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 
 class NumberOfEvents extends Component {
   state = {
-    numberOfEvents: 16,
+    numberOfEvents: 32,
   };
 
   handleNumberInput = (num) => {
     const value = num.target.value;
     this.props.updateEvents(null, value);
+    this.setState({ numberOfEvents: value });
     if (value < 1) {
       this.setState({
         numberOfEvents: value,
