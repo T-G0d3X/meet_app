@@ -24,7 +24,7 @@ class Event extends Component {
         <p className="event-info">{event.location}</p>
 
         {this.state.showDetails && (
-          <div>
+          <div className="event__Details">
             <h2>About event:</h2>
             <a href={event.htmlLink}>See Details on Google Calendar</a>
             <p>{event.description}</p>

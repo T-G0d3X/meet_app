@@ -30,12 +30,6 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.event-btn')).toHaveLength(1);
   });
 
-  test('render extra info when show details button clicked', () => {
-    EventWrapper.setState({ showDetails: false });
-    EventWrapper.find('.event-btn').simulate('click');
-    expect(EventWrapper.find('.expanded-event')).toHaveLength(1);
-  });
-
   test('render default event view when hide button clicked', () => {
     EventWrapper.setState({ showDetails: true });
     EventWrapper.find('.event-btn').simulate('click');
