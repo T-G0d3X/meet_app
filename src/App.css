@@ -11,10 +11,28 @@
 ul {
   padding: 0;
   list-style: none;
+  display: flex;
+  padding: 10px;
+}
+
+ul.suggestions {
+  display: block;
+  background-color: rgb(172, 88, 211);
+  border-radius: 20px;
+}
+
+ul.EventList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
 p {
   margin: 5px 0;
+}
+
+a {
+  font-weight: bold;
 }
 
 .display-none {
@@ -29,7 +47,7 @@ input[type='number'] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(136, 132, 216);
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -128,6 +146,15 @@ input[type='number'] {
   font-family: sans-serif;
 }
 
+.event-btn {
+  background-color: rgb(136, 132, 216);
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .Alert {
   position: fixed;
   top: 20px;
@@ -207,5 +234,13 @@ input[type='number'] {
     max-width: 50%;
     min-width: auto;
     margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  ul.EventList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
   }
 }

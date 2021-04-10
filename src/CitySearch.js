@@ -5,23 +5,26 @@ class CitySearch extends Component {
   state = {
     query: '',
     suggestions: [],
-    showSuggestions: undefined,
+    showSuggestions: false,
+    locations: this.props.locations,
     infoText: '',
   };
 
   handleInputChanged = (event) => {
     const value = event.target.value;
     this.setState({ showSuggestions: true });
+
     const suggestions = this.props.locations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     });
     if (suggestions.length === 0) {
       this.setState({
         query: value,
-        infoText: 'We cannot find the city you are looking for.',
+        infoText: 'Cannot find the city you are looking for.',
+        showSuggestions: false,
       });
     } else {
-      return this.setState({
+      this.setState({
         query: value,
         suggestions,
         infoText: '',
@@ -34,7 +37,6 @@ class CitySearch extends Component {
       query: suggestion,
       suggestions: [],
       showSuggestions: false,
-      infoText: '',
     });
 
     this.props.updateEvents(suggestion);
@@ -43,7 +45,6 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch" style={{ marginTop: '25px' }}>
-        <InfoAlert text={this.state.infoText} />
         <input
           type="text"
           className="city"
@@ -54,6 +55,7 @@ class CitySearch extends Component {
           }}
           placeholder="Search for a city"
         />
+        <InfoAlert text={this.state.infoText} />
         <ul
           className="suggestions"
           style={this.state.showSuggestions ? {} : { display: 'none' }}
@@ -61,16 +63,18 @@ class CitySearch extends Component {
           {this.state.suggestions.map((suggestion) => (
             <li
               key={suggestion}
+              id={suggestion}
               onClick={() => this.handleItemClicked(suggestion)}
             >
               {suggestion}
             </li>
           ))}
           <li
+            key="all"
             className="suggestion_name"
-            onClick={() => this.handleItemClicked()}
+            onClick={() => this.handleItemClicked('all')}
           >
-            <b>See all cities</b>
+            <b style={{ color: 'purple' }}>See all cities</b>
           </li>
         </ul>
       </div>
