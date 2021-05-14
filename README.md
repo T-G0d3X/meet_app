@@ -1,4 +1,4 @@
-![alt text](https://raw.githubusercontent.com/T-G0d3X/meet_app/master/public/meet-app-192.png) 
+
 # Meet App
 
 ## Description
