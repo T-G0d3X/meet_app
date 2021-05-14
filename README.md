@@ -7,7 +7,6 @@ A serverless, progressive web application (PWA) created with React using a test-
 fetch upcoming events. The serverless function is hosted by the AWS (Amazon Web Services). App allows users to search for a city and get a list of events hosted in that city. For the data visualization component, there are two charts—one that shows how many events will take place in that city on upcoming days, and another that visualizes the popularity of event genres in the form of a pie chart. 
 
 
-https://user-images.githubusercontent.com/69514083/118296629-7ba33e00-b4dd-11eb-9af6-05ada7e0b35f.mp4
 
 
 # FEATURE 1: FILTER EVENTS BY CITY
